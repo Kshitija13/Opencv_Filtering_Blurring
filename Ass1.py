@@ -59,7 +59,7 @@ def main_loop():
     original_image = Image.open(image_file)
     original_image = np.array(original_image)
 
-    gray = cv.cvtColor(original_image, cv.COLOR_BGR2GRAY)
+    gray = cv2.cvtColor(original_image, cv.COLOR_BGR2GRAY)
     salt_pepper = add_noise(gray)
 
     options = ['Average Filtering', 'Salt and Pepper Noise', 'Gaussian Filtering', 'Median Filtering']
