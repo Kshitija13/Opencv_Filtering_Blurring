@@ -1,12 +1,12 @@
 import numpy as np
-import cv2 as cv
+import cv2 
 import streamlit as st
 from PIL import Image
 
 
 def Average_filter(image, kernel_size):
     kernel = np.ones((kernel_size, kernel_size), np.float32) / 25
-    dst = cv.filter2D(image, -1, kernel)
+    dst = cv2.filter2D(image, -1, kernel)
     return dst
 
 
@@ -36,11 +36,11 @@ def add_noise(image):
 
 
 def GaussianBlur(image, amount, kernel_size):
-    blur = cv.GaussianBlur(image, (kernel_size, kernel_size), amount)
+    blur = cv2.GaussianBlur(image, (kernel_size, kernel_size), amount)
     return blur
 
 def MedianBlur(image, amount, kernel_size):
-    median = cv.medianBlur(image, kernel_size, amount)
+    median = cv2.medianBlur(image, kernel_size, amount)
     return median
 
 
